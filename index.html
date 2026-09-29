@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Davi Loch Vieira — Software Developer and Technical Support. Portfolio showcasing experience at SAP, Alma do Brasil, and OdontoFamily. Full-stack development, DevOps, and N2 support.">
+  <title>Davi Loch Vieira — Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- macOS Top Menu Bar -->
+  <nav class="menu-bar" id="menuBar">
+    <div class="menu-bar-left">
+      <span class="apple-logo">
+        <svg width="14" height="17" viewBox="0 0 14 17" fill="currentColor">
+          <path d="M13.1 12.6c-.3.7-.4 1-.8 1.6-.5.8-1.2 1.9-2.1 1.9-.8.1-1-.5-2.1-.5s-1.3.5-2.1.5c-.9 0-1.5-1-2.1-1.8C2.5 12.2 1.7 9 2.8 6.9c.8-1.4 2-2.3 3.2-2.3 1 0 1.7.5 2.5.5.8 0 1.3-.6 2.4-.5.4 0 1.7.2 2.5 1.4-2.2 1.3-1.8 4.5.4 5.4-.5 1.2-.7 1.7-1.2 2.5l.5-.3zM9.5 2.9c.4-.5.7-1.2.6-1.9-.6 0-1.3.4-1.7 1-.4.5-.7 1.2-.6 1.9.7 0 1.3-.4 1.7-1z"/>
+        </svg>
+      </span>
+      <span class="menu-item active">Davi Loch</span>
+      <span class="menu-item">Experience</span>
+      <span class="menu-item">Skills</span>
+      <span class="menu-item">Education</span>
+      <span class="menu-item">Contact</span>
+    </div>
+    <div class="menu-bar-right">
+      <span class="menu-bar-icon" id="wifiIcon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+      </span>
+      <span class="menu-bar-icon" id="batteryIcon">
+        <svg width="18" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="10" x2="23" y2="14"/><rect x="3" y="8" width="12" height="8" rx="1" fill="currentColor" opacity="0.5"/></svg>
+      </span>
+      <span class="menu-bar-time" id="menuBarTime"></span>
+    </div>
+  </nav>
+
+  <!-- Desktop -->
+  <main class="desktop">
+
+    <!-- Empty Desktop Message -->
+    <div class="desktop-empty" id="desktopEmpty">
+      <div class="desktop-empty-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <p>No windows open<br>Click an icon in the Dock to get started</p>
+    </div>
+
+    <!-- Hero / About Window -->
+    <section class="mac-window hero-window" id="heroWindow">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <span class="light close"></span>
+          <span class="light minimize"></span>
+          <span class="light maximize"></span>
+        </div>
+        <span class="window-title">About — Davi Loch Vieira</span>
+      </div>
+      <div class="window-content hero-content">
+        <div class="hero-avatar">
+          <div class="avatar-placeholder">DL</div>
+        </div>
+        <div class="hero-info">
+          <h1 class="hero-name">Davi Loch Vieira</h1>
+          <p class="hero-role">Software Developer</p>
+          <p class="hero-bio">Professional with experience in N2 technical support, CAD/CAM solutions, and full-stack development. Skilled in JavaScript, TypeScript, Node.js, Java, Spring Boot, SAP UI5/Fiori, Docker, Kubernetes, and CI/CD. Experienced in agile methodologies, international collaboration, and project management.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Contact Me
+            </a>
+            <a href="#experience" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              View CV
+            </a>
+          </div>
+        </div>
+        <div class="hero-terminal">
+          <div class="terminal-header">
+            <span class="terminal-prompt">~</span>
+            <span class="terminal-title">Terminal</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-green">davi@macbook</span>:<span class="t-purple">~</span>$ whoami</p>
+            <p class="t-muted">Software Developer & Technical Support</p>
+            <p><span class="t-green">davi@macbook</span>:<span class="t-purple">~</span>$ cat skills.txt</p>
+            <p class="t-muted">Loading...</p>
+            <p><span class="t-green">davi@macbook</span>:<span class="t-purple">~</span>$ <span class="cursor-blink">|</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Window -->
+    <section class="mac-window experience-window" id="experienceWindow">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <span class="light close"></span>
+          <span class="light minimize"></span>
+          <span class="light maximize"></span>
+        </div>
+        <span class="window-title">Experience — Finder</span>
+      </div>
+      <div class="window-content">
+        <div class="finder-sidebar">
+          <p class="sidebar-label">Favorites</p>
+          <a href="#" class="sidebar-item active" data-tab="work">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            Work
+          </a>
+          <a href="#" class="sidebar-item" data-tab="projects">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            Projects
+          </a>
+        </div>
+        <div class="finder-main">
+          <!-- Work Tab -->
+          <div class="tab-content active" id="workTab">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <div class="timeline-header">
+                    <h3>Technical Support N2</h3>
+                    <span class="timeline-date">Jan 2025 — Present</span>
+                  </div>
+                  <p class="timeline-company">Alma do Brasil</p>
+                  <p class="timeline-desc">Assist in the implementation of management solutions and CNC machine programming. Install and configure CAD/CAM systems for sheet metal manufacturing. Provide N2 technical support and direct customer service. Develop CNC codes for communication with CNC cutting machines. Implement software customizations using C# .NET.</p>
+                  <div class="timeline-tags">
+                    <span class="tag">C# .NET</span>
+                    <span class="tag">CAD/CAM</span>
+                    <span class="tag">CNC</span>
+                    <span class="tag">Tech Support N2</span>
+                    <span class="tag">Troubleshooting</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <div class="timeline-header">
+                    <h3>Software Developer Intern — Rotation Program</h3>
+                    <span class="timeline-date">2024 — Apr 2025</span>
+                  </div>
+                  <p class="timeline-company">SAP Labs Latin America — VT/STAR</p>
+                  <p class="timeline-desc">Developed front-end and back-end features for a cloud-based application. Worked with JavaScript, TypeScript, SAP UI5, Fiori Elements, CAP, Node.js, Java, Spring Boot, and SQL. Collaborated with an international team using Scrum and agile methodologies. Managed and deployed applications using Docker containers and Kubernetes. Analyzed and maintained CI/CD pipelines. 1st Line of Business: Developer Intern for SAP Procurement — SAP Ariba Category Management.</p>
+                  <div class="timeline-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">SAP UI5</span>
+                    <span class="tag">Fiori</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">CI/CD</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <div class="timeline-header">
+                    <h3>CRM Technology Specialist</h3>
+                    <span class="timeline-date">2020 — 2023</span>
+                  </div>
+                  <p class="timeline-company">OdontoFamily</p>
+                  <p class="timeline-desc">Managed and maintained the CRM platform for dental clinic operations. Handled system configuration, data analysis, and workflow automation to optimize patient management and internal processes. Communicated with stakeholders, prepared reports and presentations, and monitored KPIs to drive business decisions.</p>
+                  <div class="timeline-tags">
+                    <span class="tag">CRM</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">KPI Monitoring</span>
+                    <span class="tag">Process Automation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Projects Tab -->
+          <div class="tab-content" id="projectsTab">
+            <div class="projects-grid">
+              <div class="project-card">
+                <div class="project-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <h3>DevLoch Portfolio</h3>
+                <p>macOS-inspired personal portfolio and interactive curriculum built with vanilla HTML, CSS, and JavaScript.</p>
+                <a href="https://github.com/davloch" target="_blank" class="project-link">View on GitHub →</a>
+              </div>
+              <div class="project-card">
+                <div class="project-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <h3>More coming soon</h3>
+                <p>Additional projects will be showcased here as they are developed and published.</p>
+                <a href="https://github.com/davloch" target="_blank" class="project-link">GitHub Profile →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Window -->
+    <section class="mac-window skills-window" id="skillsWindow">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <span class="light close"></span>
+          <span class="light minimize"></span>
+          <span class="light maximize"></span>
+        </div>
+        <span class="window-title">Skills — System Preferences</span>
+      </div>
+      <div class="window-content skills-content">
+        <div class="skills-category">
+          <h3 class="skills-category-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Languages & Frameworks
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-chip">JavaScript</div>
+            <div class="skill-chip">TypeScript</div>
+            <div class="skill-chip">Java</div>
+            <div class="skill-chip">C#</div>
+            <div class="skill-chip">HTML & CSS</div>
+            <div class="skill-chip">SQL</div>
+            <div class="skill-chip">Node.js</div>
+            <div class="skill-chip">Spring Boot</div>
+            <div class="skill-chip">SAP UI5</div>
+            <div class="skill-chip">Fiori Elements</div>
+            <div class="skill-chip">CAP</div>
+            <div class="skill-chip">.NET</div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3 class="skills-category-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            DevOps & Tools
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-chip">Docker</div>
+            <div class="skill-chip">Kubernetes</div>
+            <div class="skill-chip">CI/CD</div>
+            <div class="skill-chip">Git / GitHub</div>
+            <div class="skill-chip">Azure</div>
+            <div class="skill-chip">Linux</div>
+            <div class="skill-chip">Bash</div>
+            <div class="skill-chip">Jira</div>
+            <div class="skill-chip">N8N</div>
+            <div class="skill-chip">Claude Code</div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3 class="skills-category-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Methodologies & Soft Skills
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-chip">Scrum</div>
+            <div class="skill-chip">Agile Methodologies</div>
+            <div class="skill-chip">DevOps</div>
+            <div class="skill-chip">Troubleshooting</div>
+            <div class="skill-chip">Tech Support N2</div>
+            <div class="skill-chip">Project Management</div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3 class="skills-category-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Languages
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-chip">Portuguese — Native</div>
+            <div class="skill-chip">English — C2</div>
+            <div class="skill-chip">Spanish — B2</div>
+            <div class="skill-chip">German — A1</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Window -->
+    <section class="mac-window education-window" id="educationWindow">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <span class="light close"></span>
+          <span class="light minimize"></span>
+          <span class="light maximize"></span>
+        </div>
+        <span class="window-title">Education — Notes</span>
+      </div>
+      <div class="window-content education-content">
+        <div class="education-list">
+          <div class="education-card">
+            <div class="edu-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+            </div>
+            <div class="edu-info">
+              <h3>Computer Science</h3>
+              <p class="edu-school">Estácio — 4th Period</p>
+              <p class="edu-period">In progress</p>
+              <p class="edu-desc">Bachelor's degree in Computer Science, currently in the 4th period.</p>
+            </div>
+          </div>
+          <div class="education-card">
+            <div class="edu-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="edu-info">
+              <h3>DevSecOps Course</h3>
+              <p class="edu-school">Fundação Bradesco</p>
+              <p class="edu-period">2023</p>
+              <p class="edu-desc">Focused on Java, JavaScript, Kubernetes, Docker, Linux, and Bash.</p>
+            </div>
+          </div>
+          <div class="education-card">
+            <div class="edu-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="edu-info">
+              <h3>English Course — C2 Proficiency</h3>
+              <p class="edu-school">Wizard English School</p>
+              <p class="edu-period">2010 — 2016</p>
+              <p class="edu-desc">Achieved C2 level proficiency in English language.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Window -->
+    <section class="mac-window contact-window" id="contactWindow">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <span class="light close"></span>
+          <span class="light minimize"></span>
+          <span class="light maximize"></span>
+        </div>
+        <span class="window-title">Contact — Mail</span>
+      </div>
+      <div class="window-content contact-content" id="contact">
+        <div class="contact-grid">
+          <a href="https://github.com/davloch" target="_blank" class="contact-card" id="githubLink">
+            <div class="contact-icon github-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div class="contact-info">
+              <h3>GitHub</h3>
+              <p>github.com/davloch</p>
+            </div>
+            <span class="contact-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </a>
+          <a href="mailto:davilochh@gmail.com" class="contact-card" id="emailLink">
+            <div class="contact-icon email-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-info">
+              <h3>Email</h3>
+              <p>davilochh@gmail.com</p>
+            </div>
+            <span class="contact-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/davi-loch-746004222/" target="_blank" class="contact-card" id="linkedinLink">
+            <div class="contact-icon linkedin-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="contact-info">
+              <h3>LinkedIn</h3>
+              <p>linkedin.com/in/davi-loch</p>
+            </div>
+            <span class="contact-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </a>
+          <a href="tel:+5551991467719" class="contact-card" id="phoneLink">
+            <div class="contact-icon phone-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-info">
+              <h3>Phone</h3>
+              <p>+55 51 991 467 719</p>
+            </div>
+            <span class="contact-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="contact-footer">
+          <p>Porto Alegre, RS — Brazil</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- macOS Dock -->
+  <nav class="dock" id="dock">
+    <div class="dock-container">
+      <a href="#heroWindow" class="dock-item active" data-tooltip="About" data-section="heroWindow">
+        <div class="dock-icon about-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+      </a>
+      <a href="#experienceWindow" class="dock-item" data-tooltip="Experience" data-section="experienceWindow">
+        <div class="dock-icon experience-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+      </a>
+      <a href="#skillsWindow" class="dock-item" data-tooltip="Skills" data-section="skillsWindow">
+        <div class="dock-icon skills-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+      </a>
+      <a href="#educationWindow" class="dock-item" data-tooltip="Education" data-section="educationWindow">
+        <div class="dock-icon education-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+      </a>
+      <div class="dock-divider"></div>
+      <a href="#contactWindow" class="dock-item" data-tooltip="Contact" data-section="contactWindow">
+        <div class="dock-icon dock-contact-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
