@@ -19,13 +19,20 @@
           <path d="M13.1 12.6c-.3.7-.4 1-.8 1.6-.5.8-1.2 1.9-2.1 1.9-.8.1-1-.5-2.1-.5s-1.3.5-2.1.5c-.9 0-1.5-1-2.1-1.8C2.5 12.2 1.7 9 2.8 6.9c.8-1.4 2-2.3 3.2-2.3 1 0 1.7.5 2.5.5.8 0 1.3-.6 2.4-.5.4 0 1.7.2 2.5 1.4-2.2 1.3-1.8 4.5.4 5.4-.5 1.2-.7 1.7-1.2 2.5l.5-.3zM9.5 2.9c.4-.5.7-1.2.6-1.9-.6 0-1.3.4-1.7 1-.4.5-.7 1.2-.6 1.9.7 0 1.3-.4 1.7-1z"/>
         </svg>
       </span>
-      <span class="menu-item active">Davi Loch</span>
-      <span class="menu-item">Experience</span>
-      <span class="menu-item">Skills</span>
-      <span class="menu-item">Education</span>
-      <span class="menu-item">Contact</span>
+      <span class="menu-item active" data-i18n="menu_about">Davi Loch</span>
+      <span class="menu-item" data-i18n="menu_experience">Experience</span>
+      <span class="menu-item" data-i18n="menu_skills">Skills</span>
+      <span class="menu-item" data-i18n="menu_education">Education</span>
+      <span class="menu-item" data-i18n="menu_contact">Contact</span>
     </div>
     <div class="menu-bar-right">
+      <!-- Language Switcher -->
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language" title="Switch language / Mudar idioma">
+        <span class="lang-opt en active">EN</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-opt pt">PT</span>
+      </button>
+
       <span class="menu-bar-icon" id="wifiIcon">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
       </span>
@@ -44,7 +51,7 @@
       <div class="desktop-empty-icon">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
       </div>
-      <p>No windows open<br>Click an icon in the Dock to get started</p>
+      <p data-i18n="desktop_empty_text">No windows open<br>Click an icon in the Dock to get started</p>
     </div>
 
     <!-- Hero / About Window -->
@@ -55,7 +62,7 @@
           <span class="light minimize"></span>
           <span class="light maximize"></span>
         </div>
-        <span class="window-title">About — Davi Loch Vieira</span>
+        <span class="window-title" data-i18n="win_title_about">About — Davi Loch Vieira</span>
       </div>
       <div class="window-content hero-content">
         <div class="hero-avatar">
@@ -63,16 +70,16 @@
         </div>
         <div class="hero-info">
           <h1 class="hero-name">Davi Loch Vieira</h1>
-          <p class="hero-role">Software Developer</p>
-          <p class="hero-bio">Professional with experience in N2 technical support, CAD/CAM solutions, and full-stack development. Skilled in JavaScript, TypeScript, Node.js, Java, Spring Boot, SAP UI5/Fiori, Docker, Kubernetes, and CI/CD. Experienced in agile methodologies, international collaboration, and project management.</p>
+          <p class="hero-role" data-i18n="hero_role">Software Developer</p>
+          <p class="hero-bio" data-i18n="hero_bio">Professional with experience in N2 technical support, CAD/CAM solutions, and full-stack development. Skilled in JavaScript, TypeScript, Node.js, Java, Spring Boot, SAP UI5/Fiori, Docker, Kubernetes, and CI/CD. Experienced in agile methodologies, international collaboration, and project management.</p>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Contact Me
+              <span data-i18n="btn_contact">Contact Me</span>
             </a>
             <a href="#experience" class="btn btn-secondary">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-              View CV
+              <span data-i18n="btn_view_cv">View CV</span>
             </a>
           </div>
         </div>
@@ -83,7 +90,7 @@
           </div>
           <div class="terminal-body">
             <p><span class="t-green">davi@macbook</span>:<span class="t-purple">~</span>$ whoami</p>
-            <p class="t-muted">Software Developer & Technical Support</p>
+            <p class="t-muted" data-i18n="terminal_role">Software Developer & Technical Support</p>
             <p><span class="t-green">davi@macbook</span>:<span class="t-purple">~</span>$ cat skills.txt</p>
             <p class="t-muted">Loading...</p>
             <p><span class="t-green">davi@macbook</span>:<span class="t-purple">~</span>$ <span class="cursor-blink">|</span></p>
@@ -100,18 +107,18 @@
           <span class="light minimize"></span>
           <span class="light maximize"></span>
         </div>
-        <span class="window-title">Experience — Finder</span>
+        <span class="window-title" data-i18n="win_title_experience">Experience — Finder</span>
       </div>
       <div class="window-content">
         <div class="finder-sidebar">
-          <p class="sidebar-label">Favorites</p>
+          <p class="sidebar-label" data-i18n="finder_favorites">Favorites</p>
           <a href="#" class="sidebar-item active" data-tab="work">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            Work
+            <span data-i18n="finder_work">Work</span>
           </a>
           <a href="#" class="sidebar-item" data-tab="projects">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-            Projects
+            <span data-i18n="finder_projects">Projects</span>
           </a>
         </div>
         <div class="finder-main">
@@ -122,16 +129,16 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                   <div class="timeline-header">
-                    <h3>Technical Support N2</h3>
-                    <span class="timeline-date">Jan 2025 — Present</span>
+                    <h3 data-i18n="role_alma">Technical Support N2</h3>
+                    <span class="timeline-date" data-i18n="date_alma">Jan 2025 — Present</span>
                   </div>
                   <p class="timeline-company">Alma do Brasil</p>
-                  <p class="timeline-desc">Assist in the implementation of management solutions and CNC machine programming. Install and configure CAD/CAM systems for sheet metal manufacturing. Provide N2 technical support and direct customer service. Develop CNC codes for communication with CNC cutting machines. Implement software customizations using C# .NET.</p>
+                  <p class="timeline-desc" data-i18n="desc_alma">Assist in the implementation of management solutions and CNC machine programming. Install and configure CAD/CAM systems for sheet metal manufacturing. Provide N2 technical support and direct customer service. Develop CNC codes for communication with CNC cutting machines. Implement software customizations using C# .NET.</p>
                   <div class="timeline-tags">
                     <span class="tag">C# .NET</span>
                     <span class="tag">CAD/CAM</span>
                     <span class="tag">CNC</span>
-                    <span class="tag">Tech Support N2</span>
+                    <span class="tag" data-i18n="tag_support">Tech Support N2</span>
                     <span class="tag">Troubleshooting</span>
                   </div>
                 </div>
@@ -140,11 +147,11 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                   <div class="timeline-header">
-                    <h3>Software Developer Intern — Rotation Program</h3>
-                    <span class="timeline-date">2024 — Apr 2025</span>
+                    <h3 data-i18n="role_sap">Software Developer Intern — Rotation Program</h3>
+                    <span class="timeline-date" data-i18n="date_sap">2024 — Apr 2025</span>
                   </div>
                   <p class="timeline-company">SAP Labs Latin America — VT/STAR</p>
-                  <p class="timeline-desc">Developed front-end and back-end features for a cloud-based application. Worked with JavaScript, TypeScript, SAP UI5, Fiori Elements, CAP, Node.js, Java, Spring Boot, and SQL. Collaborated with an international team using Scrum and agile methodologies. Managed and deployed applications using Docker containers and Kubernetes. Analyzed and maintained CI/CD pipelines. 1st Line of Business: Developer Intern for SAP Procurement — SAP Ariba Category Management.</p>
+                  <p class="timeline-desc" data-i18n="desc_sap">Developed front-end and back-end features for a cloud-based application. Worked with JavaScript, TypeScript, SAP UI5, Fiori Elements, CAP, Node.js, Java, Spring Boot, and SQL. Collaborated with an international team using Scrum and agile methodologies. Managed and deployed applications using Docker containers and Kubernetes. Analyzed and maintained CI/CD pipelines. 1st Line of Business: Developer Intern for SAP Procurement — SAP Ariba Category Management.</p>
                   <div class="timeline-tags">
                     <span class="tag">JavaScript</span>
                     <span class="tag">TypeScript</span>
@@ -163,16 +170,16 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                   <div class="timeline-header">
-                    <h3>CRM Technology Specialist</h3>
+                    <h3 data-i18n="role_odonto">CRM Technology Specialist</h3>
                     <span class="timeline-date">2020 — 2023</span>
                   </div>
                   <p class="timeline-company">OdontoFamily</p>
-                  <p class="timeline-desc">Managed and maintained the CRM platform for dental clinic operations. Handled system configuration, data analysis, and workflow automation to optimize patient management and internal processes. Communicated with stakeholders, prepared reports and presentations, and monitored KPIs to drive business decisions.</p>
+                  <p class="timeline-desc" data-i18n="desc_odonto">Managed and maintained the CRM platform for dental clinic operations. Handled system configuration, data analysis, and workflow automation to optimize patient management and internal processes. Communicated with stakeholders, prepared reports and presentations, and monitored KPIs to drive business decisions.</p>
                   <div class="timeline-tags">
                     <span class="tag">CRM</span>
-                    <span class="tag">Data Analysis</span>
-                    <span class="tag">KPI Monitoring</span>
-                    <span class="tag">Process Automation</span>
+                    <span class="tag" data-i18n="tag_data_analysis">Data Analysis</span>
+                    <span class="tag" data-i18n="tag_kpi">KPI Monitoring</span>
+                    <span class="tag" data-i18n="tag_automation">Process Automation</span>
                   </div>
                 </div>
               </div>
@@ -186,16 +193,16 @@
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
                 </div>
                 <h3>DevLoch Portfolio</h3>
-                <p>macOS-inspired personal portfolio and interactive curriculum built with vanilla HTML, CSS, and JavaScript.</p>
-                <a href="https://github.com/davloch" target="_blank" class="project-link">View on GitHub →</a>
+                <p data-i18n="proj1_desc">macOS-inspired personal portfolio and interactive curriculum built with vanilla HTML, CSS, and JavaScript.</p>
+                <a href="https://github.com/davloch" target="_blank" class="project-link" data-i18n="proj1_link">View on GitHub →</a>
               </div>
               <div class="project-card">
                 <div class="project-icon">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
                 </div>
-                <h3>More coming soon</h3>
-                <p>Additional projects will be showcased here as they are developed and published.</p>
-                <a href="https://github.com/davloch" target="_blank" class="project-link">GitHub Profile →</a>
+                <h3 data-i18n="proj2_title">More coming soon</h3>
+                <p data-i18n="proj2_desc">Additional projects will be showcased here as they are developed and published.</p>
+                <a href="https://github.com/davloch" target="_blank" class="project-link" data-i18n="proj2_link">GitHub Profile →</a>
               </div>
             </div>
           </div>
@@ -211,13 +218,13 @@
           <span class="light minimize"></span>
           <span class="light maximize"></span>
         </div>
-        <span class="window-title">Skills — System Preferences</span>
+        <span class="window-title" data-i18n="win_title_skills">Skills — System Preferences</span>
       </div>
       <div class="window-content skills-content">
         <div class="skills-category">
           <h3 class="skills-category-title">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Languages & Frameworks
+            <span data-i18n="skills_cat_lang">Languages & Frameworks</span>
           </h3>
           <div class="skills-grid">
             <div class="skill-chip">JavaScript</div>
@@ -237,7 +244,7 @@
         <div class="skills-category">
           <h3 class="skills-category-title">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            DevOps & Tools
+            <span data-i18n="skills_cat_devops">DevOps & Tools</span>
           </h3>
           <div class="skills-grid">
             <div class="skill-chip">Docker</div>
@@ -255,27 +262,27 @@
         <div class="skills-category">
           <h3 class="skills-category-title">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Methodologies & Soft Skills
+            <span data-i18n="skills_cat_soft">Methodologies & Soft Skills</span>
           </h3>
           <div class="skills-grid">
             <div class="skill-chip">Scrum</div>
-            <div class="skill-chip">Agile Methodologies</div>
+            <div class="skill-chip" data-i18n="skill_agile">Agile Methodologies</div>
             <div class="skill-chip">DevOps</div>
             <div class="skill-chip">Troubleshooting</div>
-            <div class="skill-chip">Tech Support N2</div>
-            <div class="skill-chip">Project Management</div>
+            <div class="skill-chip" data-i18n="skill_support">Tech Support N2</div>
+            <div class="skill-chip" data-i18n="skill_pm">Project Management</div>
           </div>
         </div>
         <div class="skills-category">
           <h3 class="skills-category-title">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Languages
+            <span data-i18n="skills_cat_languages">Languages</span>
           </h3>
           <div class="skills-grid">
-            <div class="skill-chip">Portuguese — Native</div>
-            <div class="skill-chip">English — C2</div>
-            <div class="skill-chip">Spanish — B2</div>
-            <div class="skill-chip">German — A1</div>
+            <div class="skill-chip" data-i18n="lang_pt">Portuguese — Native</div>
+            <div class="skill-chip" data-i18n="lang_en">English — C2</div>
+            <div class="skill-chip" data-i18n="lang_es">Spanish — B2</div>
+            <div class="skill-chip" data-i18n="lang_de">German — A1</div>
           </div>
         </div>
       </div>
@@ -289,7 +296,7 @@
           <span class="light minimize"></span>
           <span class="light maximize"></span>
         </div>
-        <span class="window-title">Education — Notes</span>
+        <span class="window-title" data-i18n="win_title_education">Education — Notes</span>
       </div>
       <div class="window-content education-content">
         <div class="education-list">
@@ -298,10 +305,10 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
             </div>
             <div class="edu-info">
-              <h3>Computer Science</h3>
-              <p class="edu-school">Estácio — 4th Period</p>
-              <p class="edu-period">In progress</p>
-              <p class="edu-desc">Bachelor's degree in Computer Science, currently in the 4th period.</p>
+              <h3 data-i18n="edu1_title">Computer Science</h3>
+              <p class="edu-school" data-i18n="edu1_school">Estácio — 4th Period</p>
+              <p class="edu-period" data-i18n="edu1_period">In progress</p>
+              <p class="edu-desc" data-i18n="edu1_desc">Bachelor's degree in Computer Science, currently in the 4th period.</p>
             </div>
           </div>
           <div class="education-card">
@@ -309,10 +316,10 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </div>
             <div class="edu-info">
-              <h3>DevSecOps Course</h3>
+              <h3 data-i18n="edu2_title">DevSecOps Course</h3>
               <p class="edu-school">Fundação Bradesco</p>
               <p class="edu-period">2023</p>
-              <p class="edu-desc">Focused on Java, JavaScript, Kubernetes, Docker, Linux, and Bash.</p>
+              <p class="edu-desc" data-i18n="edu2_desc">Focused on Java, JavaScript, Kubernetes, Docker, Linux, and Bash.</p>
             </div>
           </div>
           <div class="education-card">
@@ -320,10 +327,10 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div class="edu-info">
-              <h3>English Course — C2 Proficiency</h3>
+              <h3 data-i18n="edu3_title">English Course — C2 Proficiency</h3>
               <p class="edu-school">Wizard English School</p>
               <p class="edu-period">2010 — 2016</p>
-              <p class="edu-desc">Achieved C2 level proficiency in English language.</p>
+              <p class="edu-desc" data-i18n="edu3_desc">Achieved C2 level proficiency in English language.</p>
             </div>
           </div>
         </div>
@@ -338,7 +345,7 @@
           <span class="light minimize"></span>
           <span class="light maximize"></span>
         </div>
-        <span class="window-title">Contact — Mail</span>
+        <span class="window-title" data-i18n="win_title_contact">Contact — Mail</span>
       </div>
       <div class="window-content contact-content" id="contact">
         <div class="contact-grid">
@@ -383,7 +390,7 @@
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div class="contact-info">
-              <h3>Phone</h3>
+              <h3 data-i18n="contact_phone">Phone</h3>
               <p>+55 51 991 467 719</p>
             </div>
             <span class="contact-arrow">
@@ -392,7 +399,7 @@
           </a>
         </div>
         <div class="contact-footer">
-          <p>Porto Alegre, RS — Brazil</p>
+          <p data-i18n="contact_footer">Porto Alegre, RS — Brazil</p>
         </div>
       </div>
     </section>
@@ -402,28 +409,28 @@
   <!-- macOS Dock -->
   <nav class="dock" id="dock">
     <div class="dock-container">
-      <a href="#heroWindow" class="dock-item active" data-tooltip="About" data-section="heroWindow">
+      <a href="#heroWindow" class="dock-item active" data-tooltip="About" data-section="heroWindow" data-i18n-tooltip="dock_about">
         <div class="dock-icon about-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
       </a>
-      <a href="#experienceWindow" class="dock-item" data-tooltip="Experience" data-section="experienceWindow">
+      <a href="#experienceWindow" class="dock-item" data-tooltip="Experience" data-section="experienceWindow" data-i18n-tooltip="dock_experience">
         <div class="dock-icon experience-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
         </div>
       </a>
-      <a href="#skillsWindow" class="dock-item" data-tooltip="Skills" data-section="skillsWindow">
+      <a href="#skillsWindow" class="dock-item" data-tooltip="Skills" data-section="skillsWindow" data-i18n-tooltip="dock_skills">
         <div class="dock-icon skills-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
       </a>
-      <a href="#educationWindow" class="dock-item" data-tooltip="Education" data-section="educationWindow">
+      <a href="#educationWindow" class="dock-item" data-tooltip="Education" data-section="educationWindow" data-i18n-tooltip="dock_education">
         <div class="dock-icon education-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
       </a>
       <div class="dock-divider"></div>
-      <a href="#contactWindow" class="dock-item" data-tooltip="Contact" data-section="contactWindow">
+      <a href="#contactWindow" class="dock-item" data-tooltip="Contact" data-section="contactWindow" data-i18n-tooltip="dock_contact">
         <div class="dock-icon dock-contact-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>

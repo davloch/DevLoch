@@ -1,21 +1,246 @@
 /* ============================================
    DAVI LOCH — macOS Portfolio — Window Manager
+   Bilingual Support (English / Portuguese)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
+  // Translations Dictionary
+  // ==========================================
+  const translations = {
+    en: {
+      menu_about: "Davi Loch",
+      menu_experience: "Experience",
+      menu_skills: "Skills",
+      menu_education: "Education",
+      menu_contact: "Contact",
+
+      desktop_empty_text: "No windows open<br>Click an icon in the Dock to get started",
+
+      win_title_about: "About — Davi Loch Vieira",
+      win_title_experience: "Experience — Finder",
+      win_title_skills: "Skills — System Preferences",
+      win_title_education: "Education — Notes",
+      win_title_contact: "Contact — Mail",
+
+      hero_role: "Software Developer",
+      hero_bio: "Professional with experience in N2 technical support, CAD/CAM solutions, and full-stack development. Skilled in JavaScript, TypeScript, Node.js, Java, Spring Boot, SAP UI5/Fiori, Docker, Kubernetes, and CI/CD. Experienced in agile methodologies, international collaboration, and project management.",
+      btn_contact: "Contact Me",
+      btn_view_cv: "View CV",
+      terminal_role: "Software Developer & Technical Support",
+
+      finder_favorites: "Favorites",
+      finder_work: "Work",
+      finder_projects: "Projects",
+
+      role_alma: "Technical Support N2",
+      date_alma: "Jan 2025 — Present",
+      desc_alma: "Assist in the implementation of management solutions and CNC machine programming. Install and configure CAD/CAM systems for sheet metal manufacturing. Provide N2 technical support and direct customer service. Develop CNC codes for communication with CNC cutting machines. Implement software customizations using C# .NET.",
+
+      role_sap: "Software Developer Intern — Rotation Program",
+      date_sap: "2024 — Apr 2025",
+      desc_sap: "Developed front-end and back-end features for a cloud-based application. Worked with JavaScript, TypeScript, SAP UI5, Fiori Elements, CAP, Node.js, Java, Spring Boot, and SQL. Collaborated with an international team using Scrum and agile methodologies. Managed and deployed applications using Docker containers and Kubernetes. Analyzed and maintained CI/CD pipelines. 1st Line of Business: Developer Intern for SAP Procurement — SAP Ariba Category Management.",
+
+      role_odonto: "CRM Technology Specialist",
+      desc_odonto: "Managed and maintained the CRM platform for dental clinic operations. Handled system configuration, data analysis, and workflow automation to optimize patient management and internal processes. Communicated with stakeholders, prepared reports and presentations, and monitored KPIs to drive business decisions.",
+
+      tag_support: "Tech Support N2",
+      tag_data_analysis: "Data Analysis",
+      tag_kpi: "KPI Monitoring",
+      tag_automation: "Process Automation",
+
+      proj1_desc: "macOS-inspired personal portfolio and interactive curriculum built with vanilla HTML, CSS, and JavaScript.",
+      proj1_link: "View on GitHub →",
+      proj2_title: "More coming soon",
+      proj2_desc: "Additional projects will be showcased here as they are developed and published.",
+      proj2_link: "GitHub Profile →",
+
+      skills_cat_lang: "Languages & Frameworks",
+      skills_cat_devops: "DevOps & Tools",
+      skills_cat_soft: "Methodologies & Soft Skills",
+      skills_cat_languages: "Languages",
+
+      skill_agile: "Agile Methodologies",
+      skill_support: "Tech Support N2",
+      skill_pm: "Project Management",
+
+      lang_pt: "Portuguese — Native",
+      lang_en: "English — C2",
+      lang_es: "Spanish — B2",
+      lang_de: "German — A1",
+
+      edu1_title: "Computer Science",
+      edu1_school: "Estácio — 4th Period",
+      edu1_period: "In progress",
+      edu1_desc: "Bachelor's degree in Computer Science, currently in the 4th period.",
+
+      edu2_title: "DevSecOps Course",
+      edu2_desc: "Focused on Java, JavaScript, Kubernetes, Docker, Linux, and Bash.",
+
+      edu3_title: "English Course — C2 Proficiency",
+      edu3_school: "Wizard English School",
+      edu3_desc: "Achieved C2 level proficiency in English language.",
+
+      contact_phone: "Phone",
+      contact_footer: "Porto Alegre, RS — Brazil",
+
+      dock_about: "About",
+      dock_experience: "Experience",
+      dock_skills: "Skills",
+      dock_education: "Education",
+      dock_contact: "Contact"
+    },
+    pt: {
+      menu_about: "Davi Loch",
+      menu_experience: "Experiência",
+      menu_skills: "Habilidades",
+      menu_education: "Formação",
+      menu_contact: "Contato",
+
+      desktop_empty_text: "Nenhuma janela aberta<br>Clique em um ícone no Dock para começar",
+
+      win_title_about: "Sobre — Davi Loch Vieira",
+      win_title_experience: "Experiência — Finder",
+      win_title_skills: "Habilidades — Preferências do Sistema",
+      win_title_education: "Formação — Notas",
+      win_title_contact: "Contato — Mail",
+
+      hero_role: "Desenvolvedor de Software",
+      hero_bio: "Profissional com experiência em suporte técnico N2, soluções CAD/CAM e desenvolvimento full-stack. Habilidoso em JavaScript, TypeScript, Node.js, Java, Spring Boot, SAP UI5/Fiori, Docker, Kubernetes e CI/CD. Experiência com metodologias ágeis, colaboração internacional e gestão de projetos.",
+      btn_contact: "Fale Comigo",
+      btn_view_cv: "Ver Currículo",
+      terminal_role: "Desenvolvedor de Software & Suporte Técnico",
+
+      finder_favorites: "Favoritos",
+      finder_work: "Experiência",
+      finder_projects: "Projetos",
+
+      role_alma: "Suporte Técnico N2",
+      date_alma: "Jan 2025 — Presente",
+      desc_alma: "Auxílio na implementação de soluções de gestão e programação de máquinas CNC. Instalação e configuração de sistemas CAD/CAM para a indústria metalmecânica. Atendimento ao cliente e suporte técnico N2. Desenvolvimento de códigos CNC para comunicação com máquinas de corte. Customização de softwares em C# .NET.",
+
+      role_sap: "Estagiário de Desenvolvimento de Software — Programa de Rotação",
+      date_sap: "2024 — Abr 2025",
+      desc_sap: "Desenvolvimento de funcionalidades front-end e back-end em aplicação em nuvem. Atuação com JavaScript, TypeScript, SAP UI5, Fiori Elements, CAP, Node.js, Java, Spring Boot e SQL. Colaboração em equipe internacional utilizando metodologias ágeis (Scrum). Gerenciamento e deploy de aplicações em contêineres Docker e Kubernetes. Análise e manutenção de pipelines CI/CD. 1ª Rotação: Estagiário de Desenvolvimento no SAP Procurement — SAP Ariba Category Management.",
+
+      role_odonto: "Especialista em Tecnologia CRM",
+      desc_odonto: "Gestão e manutenção da plataforma CRM para operações de clínicas odontológicas. Configuração do sistema, análise de dados e automação de fluxos de trabalho para otimizar o atendimento ao paciente e processos internos. Comunicação com partes interessadas, elaboração de relatórios e acompanhamento de KPIs para tomadas de decisão.",
+
+      tag_support: "Suporte Técnico N2",
+      tag_data_analysis: "Análise de Dados",
+      tag_kpi: "Monitoramento de KPIs",
+      tag_automation: "Automação de Processos",
+
+      proj1_desc: "Portfólio pessoal inspirado no macOS e currículo interativo desenvolvido com HTML, CSS e JavaScript puros.",
+      proj1_link: "Ver no GitHub →",
+      proj2_title: "Mais projetos em breve",
+      proj2_desc: "Novos projetos serão apresentados aqui conforme forem desenvolvidos e publicados.",
+      proj2_link: "Perfil no GitHub →",
+
+      skills_cat_lang: "Linguagens & Frameworks",
+      skills_cat_devops: "DevOps & Ferramentas",
+      skills_cat_soft: "Metodologias & Soft Skills",
+      skills_cat_languages: "Idiomas",
+
+      skill_agile: "Metodologias Ágeis",
+      skill_support: "Suporte Técnico N2",
+      skill_pm: "Gestão de Projetos",
+
+      lang_pt: "Português — Nativo",
+      lang_en: "Inglês — C2",
+      lang_es: "Espanhol — B2",
+      lang_de: "Alemão — A1",
+
+      edu1_title: "Ciência da Computação",
+      edu1_school: "Estácio — 4º Semestre",
+      edu1_period: "Em andamento",
+      edu1_desc: "Bacharelado em Ciência da Computação, atualmente no 4º semestre.",
+
+      edu2_title: "Curso de DevSecOps",
+      edu2_desc: "Focado em Java, JavaScript, Kubernetes, Docker, Linux e Bash.",
+
+      edu3_title: "Curso de Inglês — Proficiência C2",
+      edu3_school: "Wizard Escola de Idiomas",
+      edu3_desc: "Alcançada proficiência de nível C2 no idioma inglês.",
+
+      contact_phone: "Telefone",
+      contact_footer: "Porto Alegre, RS — Brasil",
+
+      dock_about: "Sobre",
+      dock_experience: "Experiência",
+      dock_skills: "Habilidades",
+      dock_education: "Formação",
+      dock_contact: "Contato"
+    }
+  };
+
+  // Language state
+  let currentLang = localStorage.getItem('devloch_lang') || 'en';
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('devloch_lang', lang);
+    const dict = translations[lang] || translations.en;
+
+    // Update data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) {
+        el.innerHTML = dict[key];
+      }
+    });
+
+    // Update data-i18n-tooltip elements
+    document.querySelectorAll('[data-i18n-tooltip]').forEach(el => {
+      const key = el.getAttribute('data-i18n-tooltip');
+      if (dict[key]) {
+        el.setAttribute('data-tooltip', dict[key]);
+      }
+    });
+
+    // Update lang toggle UI
+    const langToggleBtn = document.getElementById('langToggle');
+    if (langToggleBtn) {
+      const enSpan = langToggleBtn.querySelector('.lang-opt.en');
+      const ptSpan = langToggleBtn.querySelector('.lang-opt.pt');
+      if (enSpan && ptSpan) {
+        if (lang === 'en') {
+          enSpan.classList.add('active');
+          ptSpan.classList.remove('active');
+        } else {
+          ptSpan.classList.add('active');
+          enSpan.classList.remove('active');
+        }
+      }
+    }
+
+    // Update window map for menu bar
+    windowManager.windowMap = {
+      heroWindow: dict.menu_about || 'About',
+      experienceWindow: dict.menu_experience || 'Experience',
+      skillsWindow: dict.menu_skills || 'Skills',
+      educationWindow: dict.menu_education || 'Education',
+      contactWindow: dict.menu_contact || 'Contact',
+    };
+  }
+
+  // Lang toggle event listener
+  const langToggleBtn = document.getElementById('langToggle');
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+      const newLang = currentLang === 'en' ? 'pt' : 'en';
+      applyLanguage(newLang);
+    });
+  }
+
+  // ==========================================
   // Window Manager State
   // ==========================================
   const windowManager = {
-    // Track which windows are open
     openWindows: new Set(),
-    // Track which windows are minimized
     minimizedWindows: new Set(),
-    // Track focus order (last = focused)
     focusStack: [],
-
-    // Window ID → Section mapping
     windowMap: {
       heroWindow: 'About',
       experienceWindow: 'Experience',
@@ -38,39 +263,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const win = document.getElementById(windowId);
     if (!win) return;
 
-    // If already open and not minimized, just focus it
     if (windowManager.openWindows.has(windowId) && !windowManager.minimizedWindows.has(windowId)) {
       focusWindow(windowId);
       win.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
 
-    // If minimized, restore it
     if (windowManager.minimizedWindows.has(windowId)) {
       windowManager.minimizedWindows.delete(windowId);
     }
 
-    // Mark as open
     windowManager.openWindows.add(windowId);
-
-    // Remove any lingering animation classes
     win.classList.remove('closing', 'minimizing');
-
-    // Show with animation
     win.style.display = 'block';
     win.classList.add('opening');
 
-    // After animation, settle into open state
     setTimeout(() => {
       win.classList.remove('opening');
       win.classList.add('open');
       focusWindow(windowId);
     }, 400);
 
-    // Bounce the dock icon
     bounceDockIcon(windowId);
-
-    // Update dock & menu active states
     updateActiveStates();
     updateDesktopEmpty();
   }
@@ -82,7 +296,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const win = document.getElementById(windowId);
     if (!win) return;
 
-    // Play close animation
     win.classList.remove('open', 'focused', 'opening');
     win.classList.add('closing');
 
@@ -90,12 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
       win.classList.remove('closing');
       win.style.display = 'none';
 
-      // Remove from state
       windowManager.openWindows.delete(windowId);
       windowManager.minimizedWindows.delete(windowId);
       windowManager.focusStack = windowManager.focusStack.filter(id => id !== windowId);
 
-      // Focus the next window in stack
       if (windowManager.focusStack.length > 0) {
         const nextFocus = windowManager.focusStack[windowManager.focusStack.length - 1];
         focusWindow(nextFocus);
@@ -113,7 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const win = document.getElementById(windowId);
     if (!win) return;
 
-    // Play minimize animation
     win.classList.remove('open', 'focused', 'opening');
     win.classList.add('minimizing');
 
@@ -121,11 +331,9 @@ document.addEventListener('DOMContentLoaded', () => {
       win.classList.remove('minimizing');
       win.style.display = 'none';
 
-      // Mark as minimized (still in openWindows)
       windowManager.minimizedWindows.add(windowId);
       windowManager.focusStack = windowManager.focusStack.filter(id => id !== windowId);
 
-      // Focus the next window
       if (windowManager.focusStack.length > 0) {
         const nextFocus = windowManager.focusStack[windowManager.focusStack.length - 1];
         focusWindow(nextFocus);
@@ -137,14 +345,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // Focus a Window (bring to front)
+  // Focus a Window
   // ==========================================
   function focusWindow(windowId) {
-    // Remove from focus stack and add to end
     windowManager.focusStack = windowManager.focusStack.filter(id => id !== windowId);
     windowManager.focusStack.push(windowId);
 
-    // Update focused class on all windows
     allWindows.forEach(win => {
       win.classList.remove('focused');
     });
@@ -154,7 +360,6 @@ document.addEventListener('DOMContentLoaded', () => {
       win.classList.add('focused');
     }
 
-    // Update menu bar title
     updateMenuBarActiveItem(windowId);
   }
 
@@ -172,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // Update Active States (dock dots + menu)
+  // Update Active States
   // ==========================================
   function updateActiveStates() {
     dockItems.forEach(item => {
@@ -188,7 +393,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateMenuBarActiveItem(windowId) {
     const name = windowManager.windowMap[windowId];
     menuItems.forEach(item => {
-      if (item.textContent.trim() === name || item.textContent.trim() === 'Davi Loch') {
+      const itemText = item.textContent.trim();
+      if (itemText === name || itemText === 'Davi Loch') {
         item.classList.add('active');
       } else {
         item.classList.remove('active');
@@ -202,7 +408,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateDesktopEmpty() {
     if (!desktopEmptyMsg) return;
 
-    // Check if any windows are actually visible (open and not minimized)
     const visibleWindows = [...windowManager.openWindows].filter(
       id => !windowManager.minimizedWindows.has(id)
     );
@@ -224,7 +429,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const minimizeBtn = win.querySelector('.light.minimize');
     const maximizeBtn = win.querySelector('.light.maximize');
 
-    // Close button
     if (closeBtn) {
       closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -232,7 +436,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Minimize button
     if (minimizeBtn) {
       minimizeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -240,7 +443,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Maximize button — scrolls window into full view
     if (maximizeBtn) {
       maximizeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -249,14 +451,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Click anywhere on window to focus it
     win.addEventListener('mousedown', () => {
       if (windowManager.openWindows.has(win.id)) {
         focusWindow(win.id);
       }
     });
 
-    // Traffic light hover symbols
     if (trafficLights) {
       const lights = trafficLights.querySelectorAll('.light');
 
@@ -293,7 +493,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const sectionId = item.getAttribute('data-section');
       if (!sectionId) return;
 
-      // If window is open and visible → focus & scroll
       if (windowManager.openWindows.has(sectionId) && !windowManager.minimizedWindows.has(sectionId)) {
         focusWindow(sectionId);
         const win = document.getElementById(sectionId);
@@ -301,10 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Otherwise, open or restore
       openWindow(sectionId);
-
-      // Scroll to it after opening
       setTimeout(() => {
         const win = document.getElementById(sectionId);
         if (win) win.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -402,6 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateClock() {
     const now = new Date();
+    const locale = currentLang === 'pt' ? 'pt-BR' : 'en-US';
     const options = {
       weekday: 'short',
       month: 'short',
@@ -410,7 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
       minute: '2-digit',
       hour12: true,
     };
-    timeEl.textContent = now.toLocaleDateString('en-US', options);
+    timeEl.textContent = now.toLocaleDateString(locale, options);
   }
 
   updateClock();
@@ -430,11 +627,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     terminalBody.innerHTML = '';
 
+    const roleText = currentLang === 'pt' 
+      ? 'Desenvolvedor de Software & Suporte Técnico'
+      : 'Software Developer & Technical Support';
+
     const lines = [
       { type: 'prompt', text: 'whoami' },
-      { type: 'output', text: 'Software Developer & Technical Support' },
+      { type: 'output', text: roleText },
       { type: 'prompt', text: 'cat skills.txt' },
-      { type: 'output', text: 'JavaScript, Python, HTML/CSS, React, Node.js, Git...' },
+      { type: 'output', text: 'JavaScript, TypeScript, Java, C#, SAP UI5, Docker, K8s...' },
       { type: 'prompt', text: '' },
     ];
 
@@ -494,7 +695,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // Hero "View CV" Button → Opens Experience
+  // Hero Buttons
   // ==========================================
   const viewCvBtn = document.querySelector('.btn-secondary');
   if (viewCvBtn) {
@@ -508,7 +709,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Hero "Contact Me" Button → Opens Contact
   const contactBtn = document.querySelector('.btn-primary');
   if (contactBtn) {
     contactBtn.addEventListener('click', (e) => {
@@ -522,17 +722,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // Initial State: Only About window is open
+  // Initial Desktop Load
   // ==========================================
   function initDesktop() {
-    // Smooth page load
+    // Apply saved language or default (EN)
+    applyLanguage(currentLang);
+
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.4s ease';
 
     requestAnimationFrame(() => {
       document.body.style.opacity = '1';
 
-      // Open About window after a brief delay
       setTimeout(() => {
         openWindow('heroWindow');
         startTerminalAnimation();

@@ -1181,3 +1181,40 @@ body::before {
   background: rgba(155, 109, 255, 0.25);
   color: #fff;
 }
+
+
+/* Language Toggle Button */
+.lang-toggle {
+  background: rgba(100, 70, 150, 0.15);
+  border: 1px solid rgba(155, 109, 255, 0.2);
+  border-radius: 12px;
+  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--font-family);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-toggle:hover {
+  background: rgba(155, 109, 255, 0.25);
+  border-color: rgba(155, 109, 255, 0.4);
+}
+
+.lang-opt {
+  font-weight: 400;
+  transition: color var(--transition-fast);
+}
+
+.lang-opt.active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.lang-divider {
+  opacity: 0.35;
+  font-size: 0.65rem;
+}
