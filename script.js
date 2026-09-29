@@ -6,6 +6,22 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
+  // Window Manager State (Declared first to avoid ReferenceError)
+  // ==========================================
+  const windowManager = {
+    openWindows: new Set(),
+    minimizedWindows: new Set(),
+    focusStack: [],
+    windowMap: {
+      heroWindow: 'About',
+      experienceWindow: 'Experience',
+      skillsWindow: 'Skills',
+      educationWindow: 'Education',
+      contactWindow: 'Contact',
+    },
+  };
+
+  // ==========================================
   // Translations Dictionary
   // ==========================================
   const translations = {
@@ -216,39 +232,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Update window map for menu bar
-    windowManager.windowMap = {
-      heroWindow: dict.menu_about || 'About',
-      experienceWindow: dict.menu_experience || 'Experience',
-      skillsWindow: dict.menu_skills || 'Skills',
-      educationWindow: dict.menu_education || 'Education',
-      contactWindow: dict.menu_contact || 'Contact',
-    };
+    if (windowManager && windowManager.windowMap) {
+      windowManager.windowMap = {
+        heroWindow: dict.menu_about || 'About',
+        experienceWindow: dict.menu_experience || 'Experience',
+        skillsWindow: dict.menu_skills || 'Skills',
+        educationWindow: dict.menu_education || 'Education',
+        contactWindow: dict.menu_contact || 'Contact',
+      };
+    }
   }
 
   // Lang toggle event listener
   const langToggleBtn = document.getElementById('langToggle');
   if (langToggleBtn) {
-    langToggleBtn.addEventListener('click', () => {
+    langToggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const newLang = currentLang === 'en' ? 'pt' : 'en';
       applyLanguage(newLang);
     });
   }
-
-  // ==========================================
-  // Window Manager State
-  // ==========================================
-  const windowManager = {
-    openWindows: new Set(),
-    minimizedWindows: new Set(),
-    focusStack: [],
-    windowMap: {
-      heroWindow: 'About',
-      experienceWindow: 'Experience',
-      skillsWindow: 'Skills',
-      educationWindow: 'Education',
-      contactWindow: 'Contact',
-    },
-  };
 
   // All window elements
   const allWindows = document.querySelectorAll('.mac-window');
@@ -537,30 +541,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   const dockContainer = document.querySelector('.dock-container');
 
-  dockContainer.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX;
+  if (dockContainer) {
+    dockContainer.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
 
-    dockItems.forEach(item => {
-      const itemRect = item.getBoundingClientRect();
-      const itemCenterX = itemRect.left + itemRect.width / 2;
-      const distance = Math.abs(mouseX - itemCenterX);
-      const maxDistance = 120;
+      dockItems.forEach(item => {
+        const itemRect = item.getBoundingClientRect();
+        const itemCenterX = itemRect.left + itemRect.width / 2;
+        const distance = Math.abs(mouseX - itemCenterX);
+        const maxDistance = 120;
 
-      if (distance < maxDistance) {
-        const scale = 1 + 0.3 * (1 - distance / maxDistance);
-        const translateY = -8 * (1 - distance / maxDistance);
-        item.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-      } else {
+        if (distance < maxDistance) {
+          const scale = 1 + 0.3 * (1 - distance / maxDistance);
+          const translateY = -8 * (1 - distance / maxDistance);
+          item.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+        } else {
+          item.style.transform = '';
+        }
+      });
+    });
+
+    dockContainer.addEventListener('mouseleave', () => {
+      dockItems.forEach(item => {
         item.style.transform = '';
-      }
+      });
     });
-  });
-
-  dockContainer.addEventListener('mouseleave', () => {
-    dockItems.forEach(item => {
-      item.style.transform = '';
-    });
-  });
+  }
 
   // ==========================================
   // Finder Sidebar Tabs (Experience section)
@@ -597,6 +603,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const timeEl = document.getElementById('menuBarTime');
 
   function updateClock() {
+    if (!timeEl) return;
     const now = new Date();
     const locale = currentLang === 'pt' ? 'pt-BR' : 'en-US';
     const options = {
@@ -670,7 +677,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (charIndex < line.text.length) {
         if (line.type === 'prompt') {
           const textSpan = currentLineEl.querySelector('.typing-text');
-          textSpan.textContent += line.text[charIndex];
+          if (textSpan) textSpan.textContent += line.text[charIndex];
         } else {
           currentLineEl.textContent += line.text[charIndex];
         }
@@ -725,7 +732,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial Desktop Load
   // ==========================================
   function initDesktop() {
-    // Apply saved language or default (EN)
     applyLanguage(currentLang);
 
     document.body.style.opacity = '0';
